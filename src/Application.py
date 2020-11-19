@@ -11,8 +11,17 @@ class Application(HasTraits):
         super().__init__(*args, **kwargs)
 
     converter = Instance(Converter)
-    animator = Animator()
-    editor = Editor()
+    animator = Instance(Animator)
+    editor = Instance(Editor)
+
+    def _converter_default(self):
+        return Converter()
+
+    def _animator_default(self):
+        return Animator()
+
+    def _editor_default(self):
+        return Editor()
 
     view = View(
         Group(
@@ -24,5 +33,3 @@ class Application(HasTraits):
         resizable=True,
         title='ASCII-art generator'
     )
-
-
