@@ -1,3 +1,6 @@
+# Executable and temp files:
+generator
+.tmp
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python,pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,python,pycharm+all

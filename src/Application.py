@@ -33,13 +33,13 @@ class Application(HasTraits):
                 self.display_char_set = self.dialog.path
 
     def _converter_default(self):
-        return Converter()
+        return Converter(self.invert)
 
     def _animator_default(self):
-        return Animator()
+        return Animator(self.invert)
 
     def _editor_default(self):
-        return Editor()
+        return Editor(self.invert)
 
     view = View(
         VGroup(
