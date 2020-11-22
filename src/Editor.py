@@ -3,6 +3,6 @@ from traitsui.api import *
 
 
 class Editor(HasTraits):
-    def __init__(self, invert, *args, **kwargs):
+    def __init__(self, application, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.invert = invert
+        self.application = application

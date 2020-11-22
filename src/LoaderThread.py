@@ -15,7 +15,7 @@ class LoaderThread(Thread):
 
         # Create string for commands:
         to_write = ''
-        if self.converter.invert:
+        if self.converter.application.invert:
             to_write += 'invert true\n'
         to_write += 'folder\n'
         to_write += self.converter.selected_folder[1:] + '\n'

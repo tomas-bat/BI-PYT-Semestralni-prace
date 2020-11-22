@@ -21,9 +21,9 @@ class InfoLabel(HasTraits):
 
 
 class Converter(HasTraits):
-    def __init__(self, invert, *args, **kwargs):
+    def __init__(self, application, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.invert = invert
+        self.application = application
 
     # Max width for the conversion:
     width = Int(0)
@@ -69,9 +69,6 @@ class Converter(HasTraits):
             self.info_label = 'Converting...'
             converter = ConverterThread(self)
             converter.start()
-
-
-
 
     view = View(
         VGroup(

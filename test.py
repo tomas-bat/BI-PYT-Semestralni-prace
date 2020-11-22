@@ -1,19 +1,34 @@
 from traits.api import *
 from traitsui.api import *
 
+from test_othefile import Sub
 
-class Window(HasTraits):
-    value = str()
-    do_something = Button()
 
-    def _do_something_fired(self):
-        self.value = str()
-        print('yello')
+class Main(HasTraits):
+    sub = Instance(Sub)
 
-    view = View('value', Item('do_something', show_label=False))
+    invert = Bool()
+
+    button = Button('Change')
+
+    def _button_fired(self):
+        self.invert = not self.invert
+
+    def _sub_default(self):
+        return Sub(self)
+
+    view = View(
+        VGroup(
+            Item('invert', show_label=False, style='readonly'),
+            Item('button', show_label=False),
+            Item('sub', show_label=False, style='custom', dock='tab'),
+            layout='tabbed'
+        )
+    )
 
 
 if __name__ == '__main__':
-    window = Window()
-    window.configure_traits()
+    main = Main()
+    main.configure_traits()
+
 

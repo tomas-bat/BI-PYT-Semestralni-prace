@@ -9,9 +9,6 @@ from src.Animator import Animator
 
 
 class Application(HasTraits):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
     converter = Instance(Converter)
     animator = Instance(Animator)
     editor = Instance(Editor)
@@ -20,7 +17,7 @@ class Application(HasTraits):
 
     display_char_set = Str('<default character set>')
 
-    invert = Bool(False)
+    invert = Bool()
 
     dialog = FileDialog()
 
@@ -33,13 +30,13 @@ class Application(HasTraits):
                 self.display_char_set = self.dialog.path
 
     def _converter_default(self):
-        return Converter(self.invert)
+        return Converter(self)
 
     def _animator_default(self):
-        return Animator(self.invert)
+        return Animator(self)
 
     def _editor_default(self):
-        return Editor(self.invert)
+        return Editor(self)
 
     view = View(
         VGroup(

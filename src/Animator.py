@@ -3,6 +3,15 @@ from traitsui.api import *
 
 
 class Animator(HasTraits):
-    def __init__(self, invert, *args, **kwargs):
+    def __init__(self, application, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.invert = invert
+        self.application = application
+
+    test = Button('Test')
+
+    def _test_fired(self):
+        print('test fired, inver in animator is:', self.application.invert)
+
+    view = View(
+        Item('test', show_label=False)
+    )
