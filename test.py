@@ -8,10 +8,7 @@ class Show(HasTraits):
         self.ascii = ascii
         self.style_sheet = '*{font-size:' + str(font_size) + 'px; font-family:"Menlo"}'
 
-
     ascii = Str()
-
-
 
 
 class MainWindow(HasTraits):

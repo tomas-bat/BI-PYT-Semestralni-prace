@@ -29,7 +29,7 @@ class ConverterThread(Thread):
 
         # Run generator with created input:
         if not os.path.exists('generator'):
-            self.info_label = 'Generator executable not found. Have you built this project correctly?\n'
+            self.convert_info_label = 'Generator executable not found. Have you built this project correctly?\n'
         os.system('./generator <.tmp/input 1>.tmp/output 2>.tmp/error')
 
         if not os.path.exists('.tmp/output'):
@@ -48,7 +48,7 @@ class ConverterThread(Thread):
                 output_str += line + '\n'
             k -= 1
             line = lines[k]
-        self.converter.info_label = output_str
+        self.converter.convert_info_label = output_str
 
         # Remove temporary stuff:
         os.remove('.tmp/input')
