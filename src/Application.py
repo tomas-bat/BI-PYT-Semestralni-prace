@@ -3,6 +3,7 @@ from pyface.file_dialog import FileDialog
 from traits.api import *
 from traitsui.api import *
 
+from src.Preview import Preview
 from src.Converter import Converter
 from src.Editor import Editor
 from src.Animator import Animator
@@ -12,6 +13,7 @@ class Application(HasTraits):
     converter = Instance(Converter)
     animator = Instance(Animator)
     editor = Instance(Editor)
+    preview = Instance(Preview)
 
     select_file = Button('Select file with custom character set')
 
@@ -38,6 +40,9 @@ class Application(HasTraits):
     def _editor_default(self):
         return Editor(self)
 
+    def _preview_default(self):
+        return Preview(self)
+
     view = View(
         VGroup(
             VGroup(
@@ -49,6 +54,7 @@ class Application(HasTraits):
             ),
             Group(
                 Item('converter', show_label=False, style='custom', dock='tab'),
+                Item('preview', show_label=False, style='custom', dock='tab'),
                 Item('animator', style='custom', show_label=False, dock='tab'),
                 Item('editor', style='custom', show_label=False, dock='tab'),
                 layout='tabbed'

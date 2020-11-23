@@ -45,7 +45,10 @@ class ConverterThread(Thread):
         output_str = ''
         while 'Convert' in line:
             if 'Converted' in line:
-                output_str += line + '\n'
+                line = line.split('Converted to: ')[-1]
+                if len(line) > 40:
+                    line = '...' + line[-40:]
+                output_str += 'Converted to: ' + line + '\n'
             k -= 1
             line = lines[k]
         self.converter.convert_info_label = output_str
