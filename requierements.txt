@@ -8,7 +8,6 @@ certifi==2020.11.8
 cffi==1.14.0
 chardet==3.0.4
 conda==4.9.2
-conda-package-handling==1.7.0+0.g7c4a471.dirty
 cryptography==2.9.2
 cycler==0.10.0
 decorator==4.4.2
@@ -34,9 +33,6 @@ llvmlite==0.34.0
 MarkupSafe==1.1.1
 matplotlib==3.3.2
 mistune==0.8.4
-mkl-fft==1.2.0
-mkl-random==1.1.1
-mkl-service==2.3.0
 more-itertools==8.5.0
 nbclient==0.5.1
 nbconvert==6.0.7
@@ -66,7 +62,6 @@ pyOpenSSL==19.1.0
 pyparsing==2.4.7
 pyrsistent==0.17.3
 PySocks==1.7.1
-pytest==0.0.0
 python-dateutil==2.8.1
 pytz==2020.4
 pyzmq==19.0.2
