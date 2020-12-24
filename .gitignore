@@ -1,5 +1,6 @@
 # Executable and temp files:
 generator
+.generator/
 .tmp
 *.png
 *.jpg
