@@ -1,4 +1,8 @@
 #!/bin/bash
+# Tomáš Batěk, 2020
+#
+# Shell script to download original C++ ASCII-art generator, compile it, take the
+# executable and delete everything used.
 
 rm -rf .generator
 
