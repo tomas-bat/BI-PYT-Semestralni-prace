@@ -2,8 +2,6 @@
 generator
 .generator/
 .tmp
-*.png
-*.jpg
 converted/
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,python,pycharm+all
