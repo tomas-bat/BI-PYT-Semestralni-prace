@@ -11,7 +11,7 @@ typu JPEG/PNG do ASCII podoby.
 
 V této semestrální práci se tedy jedná o nadstavbu zmíněné CLI aplikace, která ji bude umět ovládat pomocí GUI.
 
-## Jak spustit program
+## Jak spustit aplikaci
 
 Před instalací tohoto programu je potřeba mít nainstalovaný Python 3.
 
@@ -24,6 +24,44 @@ Před instalací tohoto programu je potřeba mít nainstalovaný Python 3.
 4. Spustit aplikaci: `python main.py`
 
 Pokud se při nějakém kroku instalace vyskytl problém, vizte prosím sekci 'Problémy při instalaci'
+
+## Jak používat aplikaci
+
+Po spuštění aplikace se objeví následující okno:
+
+<img src="tutorial/1.png" width="1000">
+
+Kliknutím na `Select file with custom character set` se zobrazí možnost vybrat libovolný soubor, který bude
+použit jako paleta pro ASCII znaky. Načítání funguje tak, že načte první řádek vybraného souboru a tento řádek
+bude považovat za ASCII přechod, který bude použit při konverzi. Pokud nevyberete žádný vlastní ASCII přechod,
+bude použit výchozí.
+
+Zaškrtnutím políčka `Invert characters` nastavíte inverzi pro konverzi, tedy to, že ASCII přechod bude načítán
+obráceně. Je vhodné inverzi vypnout, pokud zobrazujete ASCII obrázek na světlém pozadí, a naopak zapnout, pokud
+obrázek zobrazujete na tmavém pozadí.
+
+Pod těmito možnostmi je výběr tří tabů - Converter, Preview, Animator.
+
+### Converter
+
+Ve výchozím stavu je vybrán tab `Converter`. Abyste mohli konvertovat obrázky, je potřeba vybrat složku, odkud
+se obrázky budou načítat. Tak učiníte kliknutím na `Select folder with pictures`, což otevře dialog, pomocí
+kterého budete moct vybrat složku. Jakmile vyberete složku, odkud se obrázky mají načítat, můžete specifikovat
+maximální šířku, jakou mají výsledné obrázky mít. Pokud ponecháte nastavení šířky na 0, obrázky budou mít svojí původní
+šířku. Kliknutím na tlačítko `Load` aplikace vypíše, jaké obrázky se podařilo ze složky načíst a tlačítko `Convert`
+všechny tyto obrázky konvertuje do ASCII podoby do podsložky 'converted'. Pokud chcete náhled, jak výsledné obrázky
+vypadají, použijte tab Preview pro zobrazení konkrétního obrázku, nebo tab Animator pro zobrazení animace z více
+obrázků.
+
+### Preview
+
+<img src="tutorial/2.png" width="1000">
+
+V tabu Preview musíte opět vybrat složku, tentokrát ale složku s konvertovanými obrázky. Pokud ste již obrázky
+konvertovali, bude se tato složka nacházet ve složce, kterou ste zadali v tabu Converter. Pokud máte vybráno,
+tak si můžete zvolit, jakou velikost písma budou mít znaky zobrazovaného ASCII obrázku pomocí `Font size`. Pod tím
+si můžete zvolit, který konkrétní obrázek z této složky chcete zobrazit. Kliknutím na tlačítko `Show image` 
+se otevře nové okno s ASCII obrázkem.
 
 ## Ukázka aplikace
 
@@ -56,4 +94,7 @@ Pro získání spustitelného souboru původní CLI aplikace je připraven skrip
 původní CLI aplikace.
    
 Kompilace původní CLI aplikace je navržena pro macOS a Linux. Potřebuje externí knihovny 'libpng' a 'libjpeg'.
+
+Pokud se pokusíte aplikaci spustit bez přítomnosti spustitelného souboru původní CLI aplikace, vyskytne se pouze
+chybová hláška a program se ukončí.
 
