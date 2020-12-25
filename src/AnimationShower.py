@@ -10,7 +10,7 @@ class AnimationShower(HasTraits):
         super().__init__(*args, **kwargs)
         self.ascii = ascii
         self.fps = fps
-        self.ascii_label = ascii[0]
+        self.ascii_label = self.ascii[0]
 
     ascii_label = Str()
 
@@ -18,4 +18,4 @@ class AnimationShower(HasTraits):
 
     def _play_fired(self):
         thread = AnimationThread(self)
-        thread.run()
+        thread.start()

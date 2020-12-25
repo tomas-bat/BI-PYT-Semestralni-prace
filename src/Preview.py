@@ -28,7 +28,7 @@ class Preview(HasTraits):
 
     show_image = Button('Show Image')
 
-    font_size = Range(1, 10)
+    font_size = Range(1, 10, value=3)
 
     select_converted_folder = Button('Select folder with converted pictures')
 
@@ -37,6 +37,8 @@ class Preview(HasTraits):
     display_converted_folder_path = Str('<folder not selected>')
 
     shower_info_label = Str('No ascii pictures to show.')
+
+    no_images = True
 
     def _select_converted_folder_fired(self):
         result = self.dialog.open()
@@ -56,18 +58,29 @@ class Preview(HasTraits):
                     at_least_one = True
             if not at_least_one:
                 self.images.append('<none>')
+                self.shower_info_label = 'No ascii pictures to show.'
+                self.no_images = True
             else:
                 self.current_image = self.images[0]
+                self.shower_info_label = 'Ascii images loaded.'
+                self.no_images = False
 
     def _show_image_fired(self):
+        if self.selected_converted_folder == '__none__':
+            self.shower_info_label = 'No folder has been selected.'
+            return
+        if self.no_images:
+            return
         ascii = ''
+        self.shower_info_label = 'Ready'
         path = self.selected_converted_folder + '/' + self.current_image
         with open(str(path), mode='r+', encoding='utf-8') as f:
             ascii = f.read()
         shower = AsciiShower(ascii)
         style_sheet = '*{font-size:' + str(self.font_size) + 'px; font-family:"Menlo"}'
         view = View(
-            Item('ascii', style='readonly', show_label=False, style_sheet=style_sheet)
+            Item('ascii', style='readonly', show_label=False, style_sheet=style_sheet),
+            title='Image'
         )
         shower.configure_traits(view=view)
 

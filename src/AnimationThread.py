@@ -1,4 +1,5 @@
-import time
+from time import sleep
+from random import randrange
 from threading import Thread
 
 
@@ -10,4 +11,4 @@ class AnimationThread(Thread):
     def run(self):
         for frame in self.shower.ascii:
             self.shower.ascii_label = frame
-            time.sleep(1/self.shower.fps)
+            sleep(1/self.shower.fps)
