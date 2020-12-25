@@ -5,14 +5,12 @@ from traitsui.api import *
 
 from src.Preview import Preview
 from src.Converter import Converter
-from src.Editor import Editor
 from src.Animator import Animator
 
 
 class Application(HasTraits):
     converter = Instance(Converter)
     animator = Instance(Animator)
-    editor = Instance(Editor)
     preview = Instance(Preview)
 
     select_file = Button('Select file with custom character set')
@@ -37,9 +35,6 @@ class Application(HasTraits):
     def _animator_default(self):
         return Animator(self)
 
-    def _editor_default(self):
-        return Editor(self)
-
     def _preview_default(self):
         return Preview(self)
 
@@ -56,7 +51,6 @@ class Application(HasTraits):
                 Item('converter', show_label=False, style='custom', dock='tab'),
                 Item('preview', show_label=False, style='custom', dock='tab'),
                 Item('animator', style='custom', show_label=False, dock='tab'),
-                Item('editor', style='custom', show_label=False, dock='tab'),
                 layout='tabbed'
             )
         ),

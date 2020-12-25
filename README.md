@@ -7,7 +7,7 @@ Semestrální práce z předmětu BI-PYT. Tomáš Batěk, 2020.
 Cílem semestrální práce bylo vytvořit grafické uživatelské rozhraní pro CLI aplikaci
 [ASCII-art generator](https://github.com/tomas-bat/ASCII-art-generator). Tato aplikace byla vytvořena jako
 semestrální práce v předmětu BI-PA2 v LS 2019/20. Jedná se o program napsaný v C/C++, který umí konvertovat obrázky
-typu JPG/PNG do ASCII podoby.
+typu JPEG/PNG do ASCII podoby.
 
 V této semestrální práci se tedy jedná o nadstavbu zmíněné CLI aplikace, která ji bude umět ovládat pomocí GUI.
 
