@@ -73,6 +73,8 @@ Navíc máte taky možnost nastavit, počet snímků za sekundu pro animaci pomo
 
 ## Ukázka aplikace
 
+[Ukázka aplikace na YouTube](https://youtu.be/31DztBl89Zo)
+
 ## Problémy při instalaci
 
 - Tento program byl vyvíjen pomocí Pythonu 3.8, doporučuji tedy používat tuto verzi Pythonu.
