@@ -63,6 +63,14 @@ tak si můžete zvolit, jakou velikost písma budou mít znaky zobrazovaného AS
 si můžete zvolit, který konkrétní obrázek z této složky chcete zobrazit. Kliknutím na tlačítko `Show image` 
 se otevře nové okno s ASCII obrázkem.
 
+### Animator
+
+Tab Animator funguje velmi podobně jako Preview. Rozdíl je ten, že nevybíráte jeden obrázek, který se zobrazí na novém
+okně, ale místo toho se načtou všechny obrázky z vybrané složky a animace z těchto obrázků se zobrazí na novém okně.
+Navíc máte taky možnost nastavit, počet snímků za sekundu pro animaci pomocí `FPS` posuvníku.
+
+<img src="tutorial/2.png" width="1000">
+
 ## Ukázka aplikace
 
 ## Problémy při instalaci
