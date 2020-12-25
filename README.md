@@ -29,7 +29,7 @@ Pokud se při nějakém kroku instalace vyskytl problém, vizte prosím sekci 'P
 
 Po spuštění aplikace se objeví následující okno:
 
-<img src="tutorial/1.png" width="1000">
+<img src="tutorial/1.png" width="600">
 
 Kliknutím na `Select file with custom character set` se zobrazí možnost vybrat libovolný soubor, který bude
 použit jako paleta pro ASCII znaky. Načítání funguje tak, že načte první řádek vybraného souboru a tento řádek
@@ -55,7 +55,7 @@ obrázků.
 
 ### Preview
 
-<img src="tutorial/2.png" width="1000">
+<img src="tutorial/2.png" width="600">
 
 V tabu Preview musíte opět vybrat složku, tentokrát ale složku s konvertovanými obrázky. Pokud ste již obrázky
 konvertovali, bude se tato složka nacházet ve složce, kterou ste zadali v tabu Converter. Pokud máte vybráno,
