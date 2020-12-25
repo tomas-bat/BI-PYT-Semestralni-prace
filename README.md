@@ -69,7 +69,7 @@ Tab Animator funguje velmi podobně jako Preview. Rozdíl je ten, že nevybírá
 okně, ale místo toho se načtou všechny obrázky z vybrané složky a animace z těchto obrázků se zobrazí na novém okně.
 Navíc máte taky možnost nastavit, počet snímků za sekundu pro animaci pomocí `FPS` posuvníku.
 
-<img src="tutorial/2.png" width="1000">
+<img src="tutorial/3.png" width="1000">
 
 ## Ukázka aplikace
 
