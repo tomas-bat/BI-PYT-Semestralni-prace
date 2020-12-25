@@ -5,6 +5,8 @@ from pyface.directory_dialog import DirectoryDialog
 from traits.api import *
 from traitsui.api import *
 
+from src.AnimationShower import AnimationShower
+
 
 class Animator(HasTraits):
     def __init__(self, application, *args, **kwargs):
@@ -37,17 +39,22 @@ class Animator(HasTraits):
             else:
                 self.display_converted_folder_path = self.dialog.path
             pathdir = os.listdir(self.dialog.path)
-            self.images.clear()
-            at_least_one = False
-            for item in pathdir:
-                # Only append non-directories and files ending with '.ascii'
-                if not os.path.isdir(os.path.join(self.dialog.path, item)) and item[-6:] == '.ascii':
-                    self.images.append(item)
-                    at_least_one = True
-            if not at_least_one:
-                self.images.append('<none>')
-            else:
-                self.current_image = self.images[0]
+
+    def _show_animation_fired(self):
+        ascii = list()
+        for filename in os.listdir(self.selected_converted_folder):
+            if filename[-6:] == '.ascii':
+                with open(os.path.join(self.selected_converted_folder, filename), mode='r+', encoding='utf-8') as f:
+                    ascii.append(f.read())
+        ascii.sort()
+        shower = AnimationShower(ascii, self.fps)
+        style_sheet = '*{font-size:' + str(self.font_size) + 'px; font-family:"Menlo"}'
+        view = View(
+            Item('play', show_label=False),
+            Item('ascii_label', style='readonly', show_label=False, style_sheet=style_sheet)
+        )
+        shower.configure_traits(view=view)
+
 
     view = View(
         VGroup(

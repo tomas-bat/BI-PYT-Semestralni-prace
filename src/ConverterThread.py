@@ -51,7 +51,11 @@ class ConverterThread(Thread):
                 output_str += 'Converted to: ' + line + '\n'
             k -= 1
             line = lines[k]
-        self.converter.convert_info_label = output_str
+        if len(output_str.split('\n')) > 20:
+            self.converter.convert_info_label = '...\n'
+            self.converter.convert_info_label += '\n'.join(output_str.split('\n')[-20:])
+        else:
+            self.converter.convert_info_label = output_str
 
         # Remove temporary stuff:
         os.remove('.tmp/input')
