@@ -88,7 +88,7 @@ na situaci, kdy aplikace odmítala fungovat kvůli problémům s moduly. Tento p
 potřebné moduly nainstalujete pomocí příkazu `conda install`, místo `pip install`. K tomu je však
 potřeba nainstalovat alespoň [minicondu](https://docs.conda.io/en/latest/miniconda.html).
 
-### Získání spustitelného souboru původní CLI aplikace.
+### Získání spustitelného souboru původní CLI aplikace
 
 Původní CLI aplikace [ASCII-art generator](https://github.com/tomas-bat/ASCII-art-generator) je vlastní
 projekt. Pro funkci této Python aplikace je však potřeba získat spustitelný soubor původní CLI
