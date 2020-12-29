@@ -49,3 +49,5 @@ class LoaderThread(Thread):
         os.remove('.tmp/output')
         os.remove('.tmp/error')
         os.removedirs('.tmp')
+
+        self.converter.in_progress = False

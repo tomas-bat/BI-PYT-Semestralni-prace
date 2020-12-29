@@ -40,6 +40,8 @@ class Converter(HasTraits):
 
     convert_info_label = Str('Converter is ready.')
 
+    in_progress = False
+
     # A platform-independent dialog to select a directory with images:
     dialog = DirectoryDialog()
 
@@ -58,6 +60,7 @@ class Converter(HasTraits):
         if self.selected_folder == '__none__':
             self.convert_info_label = 'No folder has been selected.'
         else:
+            self.in_progress = True
             self.convert_info_label = 'Loading...'
             loader = LoaderThread(self)
             loader.start()
@@ -67,6 +70,7 @@ class Converter(HasTraits):
             self.convert_info_label = 'No folder has been selected.'
         else:
             self.convert_info_label = 'Converting...'
+            self.in_progress = True
             converter = ConverterThread(self)
             converter.start()
 
