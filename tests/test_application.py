@@ -1,9 +1,16 @@
+import os
+
 from traitsui.testing.api import *
 
 from src.Application import Application
 
 app = Application()
 tester = UITester()
+
+
+def test_installed_properly():
+    if not os.path.exists('generator'):
+        assert False
 
 
 def test_change_inversion():
