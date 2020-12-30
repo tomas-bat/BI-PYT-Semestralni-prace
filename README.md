@@ -86,7 +86,9 @@ Navíc máte taky možnost nastavit, počet snímků za sekundu pro animaci pomo
 Příkaz `pip` by měl být schopen nainstalovat potřebné moduly pro běh této aplikace. Narazil jsem však
 na situaci, kdy aplikace odmítala fungovat kvůli problémům s moduly. Tento problém lze vyřešit tak, že
 potřebné moduly nainstalujete pomocí příkazu `conda install`, místo `pip install`. K tomu je však
-potřeba nainstalovat alespoň [minicondu](https://docs.conda.io/en/latest/miniconda.html).
+potřeba nainstalovat alespoň [minicondu](https://docs.conda.io/en/latest/miniconda.html). Pokud tedy narazíte
+na jakokoli chybu při pokusu o spuštění aplikace, která zmiňuje problém s moduly, pokuste se odinstalovat
+moduly zmíněné v `Requirements.txt` a znovu je nainstalovat pomocí zmíněného `conda install`.
 
 ### Získání spustitelného souboru původní CLI aplikace
 
