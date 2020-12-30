@@ -27,7 +27,8 @@ class LoaderThread(Thread):
 
         # Run generator with created input:
         if not os.path.exists('generator'):
-            self.converterconvert_info_label = 'Generator executable not found. Have you built this project correctly?\n'
+            self.converterconvert_info_label = 'Generator executable not found. Have you built this project ' \
+                                               'correctly?\n '
         os.system('./generator <.tmp/input 1>.tmp/output 2>.tmp/error')
 
         if not os.path.exists('.tmp/output'):

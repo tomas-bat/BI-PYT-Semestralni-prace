@@ -41,7 +41,6 @@ class Animator(HasTraits):
                 self.display_converted_folder_path = '...' + self.dialog.path[-40:]
             else:
                 self.display_converted_folder_path = self.dialog.path
-            pathdir = os.listdir(self.dialog.path)
 
             self.ascii_list = list()
             for filename in sorted(os.listdir(self.selected_converted_folder)):

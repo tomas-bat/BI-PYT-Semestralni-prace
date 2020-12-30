@@ -1,8 +1,3 @@
-import os
-from pprint import pprint
-from threading import Thread
-from time import sleep
-
 from pyface.constant import OK
 from pyface.directory_dialog import DirectoryDialog
 from traits.api import *
