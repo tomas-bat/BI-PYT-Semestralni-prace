@@ -34,7 +34,6 @@ def test_convert_1():
 def test_convert_2():
     with tester.create_ui(converter) as ui:
         converter.selected_folder = os.path.join(
-
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'examples')
         convert_button = tester.find_by_name(ui, 'convert')
         width_field = tester.find_by_name(ui, 'width')
